@@ -15,7 +15,7 @@
 </g>
 <path class="st1" d="M34,30h34c4.4,0,8,3.6,8,8v34c0,4.4-3.6,8-8,8H34c-4.4,0-8-3.6-8-8V38C26,33.6,29.6,30,34,30z"/>
 <g transform="matrix(0.199 0 0 0.199 27.3617 31)" style="overflow:visible;">
-    <svg fill="#000000" height="236" width="236" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <svg fill="#ffffff" height="236" width="236" viewBox="0 -40 512 592" xmlns="http://www.w3.org/2000/svg">
         <g>
             <g>
                 <path d="M155.604,331.743c-0.134-0.712-0.356-1.414-0.634-2.081c-0.278-0.679-0.623-1.325-1.024-1.926
@@ -76,4 +76,5 @@
 <rect x="91.6" y="25.9" class="st2" width="280.2" height="69.1"/>
 <text transform="matrix(1 0 0 1 91.6169 47.5007)"><tspan x="0" y="0" class="st3 st4 st5">Turning Code</tspan><tspan x="0" y="36" class="st3 st4 st5">into Motion</tspan></text>
 </svg>
+
 
