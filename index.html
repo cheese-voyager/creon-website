@@ -17,7 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   </head>
+
   <body class="antialiased">
+
     <!-- navbar -->
     <div x-data="{ open: false }" class="w-full text-gray-700 bg-cream">
       <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
@@ -25,7 +27,7 @@
           <div class="relative md:mt-8">
             <a href="#" class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">CREON</a>
             <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z" fill="#ffb14b"/>
+              <path d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z" fill="#23BDEE"/>
             </svg>
           </div>
           <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -43,6 +45,7 @@
     </div>
     <div class="bg-cream">
       <div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
+
         <!--Left Col-->
 			<div class="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
 				<h1 data-aos="fade-right" data-aos-once="true" class="my-4 text-5xl font-bold leading-tight text-darken">
@@ -51,15 +54,20 @@
 				<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="leading-normal text-2xl mb-8">Fostering Innovation and Engineering at Itenas through Robotics. </p>
 				<div data-aos="fade-up" data-aos-once="true" data-aos-delay="700" class="w-full md:flex items-center justify-center lg:justify-start md:space-x-5">
 					<div class="flex items-center justify-center space-x-3 mt-5 md:mt-0 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
-						<button class="bg-white w-14 h-14 rounded-full flex items-center justify-center">
-							<svg class="w-5 h-5 ml-2" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M22.5751 12.8097C23.2212 13.1983 23.2212 14.135 22.5751 14.5236L1.51538 27.1891C0.848878 27.5899 5.91205e-07 27.1099 6.25202e-07 26.3321L1.73245e-06 1.00123C1.76645e-06 0.223477 0.848877 -0.256572 1.51538 0.14427L22.5751 12.8097Z" fill="#23BDEE"/>
-							</svg>
-						</button>
-						<span class="cursor-pointer">Watch our content!</span>
-					</div>
-				</div>
-			</div>
+						<a id="link-youtube" href="https://www.youtube.com/@CREON-p6z">
+              <button class="bg-white w-14 h-14 rounded-full flex items-center justify-center">
+						  	<svg class="w-5 h-5 ml-2" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	<path d="M22.5751 12.8097C23.2212 13.1983 23.2212 14.135 22.5751 14.5236L1.51538 27.1891C0.848878 27.5899 5.91205e-07 27.1099 6.25202e-07 26.3321L1.73245e-06 1.00123C1.76645e-06 0.223477 0.848877 -0.256572 1.51538 0.14427L22.5751 12.8097Z" fill="#23BDEE"/>
+							  </svg>
+						  </button>
+            </a>
+            <a href="https://www.youtube.com/@CREON-p6z">
+              <span class="cursor-pointer">Watch our content!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
         <!--Right Col-->
         <div class="w-full lg:w-6/12 lg:-mt-10 relative" id="girl">
           <img data-aos="fade-up" data-aos-once="true" class="pt-20 pb-20 w-10/12 mx-auto 2xl:-mb-20" src="img/robot.png"/>
@@ -72,8 +80,7 @@
             <svg class="h-16 sm:h-24"
               viewBox="0 0 149 149"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+              xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
                 <rect
                   x="40"
@@ -98,95 +105,34 @@
                 stroke-width="4"
                 stroke-linecap="round"
               />
-              <path
-                d="M65.875 58.7375L65.875 78.575"
-                stroke="#F25471"
-                stroke-width="4"
-                stroke-linecap="round"
-              />
-              <path
-                d="M83.125 63.9125V78.575"
-                stroke="#F25471"
-                stroke-width="4"
-                stroke-linecap="round"
-              />
+              <path d="M65.875 58.7375L65.875 78.575" stroke="#F25471" stroke-width="4" stroke-linecap="round"/>
+              <path d="M83.125 63.9125V78.575" stroke="#F25471" stroke-width="4" stroke-linecap="round"/>
               <defs>
-                <filter
-                  id="filter0_d"
-                  x="0"
-                  y="0"
-                  width="149"
-                  height="149"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
+                <filter id="filter0_d" x="0" y="0" width="149" height="149" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                   <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  />
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
                   <feOffset dy="8" />
                   <feGaussianBlur stdDeviation="20" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.825 0 0 0 0 0.300438 0 0 0 0 0.396718 0 0 0 0.26 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow"
-                    result="shape"
-                  />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0.825 0 0 0 0 0.300438 0 0 0 0 0.396718 0 0 0 0.26 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
                 </filter>
               </defs>
             </svg>
           </div>
           <!-- ux class -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-once="true"
-            class="absolute bottom-14 -left-4 sm:left-2 sm:bottom-20 lg:bottom-24 lg:-left-4 floating"
-          >
-            <img
-              class="bg-white bg-opacity-80 rounded-lg h-20 sm:h-28"
-              src="img/ux-class.svg"
-              alt=""
-            />
+          <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="absolute bottom-14 -left-4 sm:left-2 sm:bottom-20 lg:bottom-24 lg:-left-4 floating">
+            <img class="bg-white bg-opacity-80 rounded-lg h-20 sm:h-28" src="img/ux-class.svg" alt=""/>
           </div>
           <!-- congrats -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="600"
-            data-aos-once="true"
-            class="absolute bottom-20 md:bottom-48 lg:bottom-52 -right-6 lg:right-8 floating-4"
-          >
-            <img
-              class="bg-white bg-opacity-80 rounded-lg h-12 sm:h-16"
-              src="img/congrat.svg"
-              alt=""
-            />
+          <div data-aos="fade-up" data-aos-delay="600" data-aos-once="true" class="absolute bottom-20 md:bottom-48 lg:bottom-52 -right-6 lg:right-8 floating-4">
+            <img class="bg-white bg-opacity-80 rounded-lg h-12 sm:h-16" src="img/congrat.svg" alt=""/>
           </div>
         </div>
       </div>
       <div class="text-white -mt-14 sm:-mt-24 lg:-mt-36 z-40 relative">
-        <svg
-          class="xl:h-40 xl:w-full"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
-            fill="currentColor"
-          ></path>
+        <svg class="xl:h-40 xl:w-full" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" fill="currentColor"></path>
         </svg>
         <div class="bg-white w-full h-20 -mt-px"></div>
       </div>
@@ -194,7 +140,7 @@
 
     <!-- based at -->
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-center mb-3 text-gray-400 font-medium">
+      <h1 class="text-center mb-4 text-gray-400 font-medium">
         Based at Bandung National Institute of Technology
       </h1>
       <div class="justify-items-center">
@@ -207,22 +153,11 @@
       <h1 class="text-3xl font-bold mb-4">
         What is<span class="text-yellow-500"> CREON?</span>
       </h1>
-      <p class="text-center text-gray-500">
-        Creative Robotics Engineers of ITENAS (CREON), wadah bagi mahasiswa
-        Itenas untuk berinovasi dan berprestasi di bidang robotika. Sebagai
-        pusat kolaborasi lintas disiplin, CREON mendorong penelitian,
-        pengembangan teknologi, dan penciptaan karya robotika yang aplikatif.
-        Saat ini CREON memiliki divisi yang berkiprah di berbagai ajang
-        nasional, meliputi KRAI yang berfokus pada robot berbasis darat, KRTI
-        yang mengembangkan teknologi robot terbang dan sistem kendali otonom,
-        serta KRBAI yang tengah dipersiapkan untuk menjelajahi potensi robotik
-        bawah air. Dengan tim yang kompeten, budaya kerja kolaboratif, dan
-        semangat inovasi yang tinggi, CREON berkomitmen menjadi pusat unggulan
-        robotika akademik sekaligus berkontribusi nyata bagi kemajuan teknologi
-        nasional.
+      <p class="tracking-wider leading-7 text-center text-gray-500">
+        It's a forum for Itenas students to innovate and excel in the field of robotics. Actively involved in research and development of technology through its divisions: KRAI, KRTI, and KRBAI. With a competent team and a high spirit of innovation, CREON is committed to becoming a leading center for academic robotics and contributing to the advancement of national technology.
       </p>
     </div>
-    <div data-aos="fade-up" class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
+    <div data-aos="fade-up" class="flex flex-col mt-28 md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
       <div class="relative md:w-5/12">
         <img class="rounded-2xl w-full" src="img/KRAI.jpg" alt="" />
         <div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
@@ -241,44 +176,34 @@
           </div>
         </div>
       </div>
-      </div>
     </div>
 
     <!-- .footer -->
     <footer class="mt-32" style="background-color: #ffb14b">
       <div class="max-w-lg mx-auto">
         <div
-          class="flex py-12 justify-center text-white items-center px-20 sm:px-36"
-        >
+          class="flex py-12 justify-center text-white items-center px-20 sm:px-36">
           <div class="relative">
             <h1 class="font-bold text-xl pr-5 relative z-50">CREON</h1>
-            <svg
-              class="w-11 h-11 absolute -top-2 -left-3 z-40"
-              viewBox="0 0 79 79"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M35.9645 2.94975C37.9171 0.997129 41.0829 0.997127 43.0355 2.94975L76.0502 35.9645C78.0029 37.9171 78.0029 41.0829 76.0503 43.0355L43.0355 76.0502C41.0829 78.0029 37.9171 78.0029 35.9645 76.0503L2.94975 43.0355C0.997129 41.0829 0.997127 37.9171 2.94975 35.9645L35.9645 2.94975Z"
-                stroke="#efef56"
-                stroke-width="2"
-              />
+            <svg class="w-11 h-11 absolute -top-2 -left-3 z-40" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M35.9645 2.94975C37.9171 0.997129 41.0829 0.997127 43.0355 2.94975L76.0502 35.9645C78.0029 37.9171 78.0029 41.0829 76.0503 43.0355L43.0355 76.0502C41.0829 78.0029 37.9171 78.0029 35.9645 76.0503L2.94975 43.0355C0.997129 41.0829 0.997127 37.9171 2.94975 35.9645L35.9645 2.94975Z" stroke="#23BDEE" stroke-width="2"/>
             </svg>
           </div>
-          <span class="border-l text-sm pl-5 py-2 font-semibold"
-            >Creative Robotics Engineers of ITENAS</span
-          >
+          <span class="border-l text-sm pl-5 py-2 font-semibold">Creative Robotics Engineers of ITENAS</span>
         </div>
         <div class="text-center pb-16 pt-5">
-          <label class="text-white font-semibold"
-            >See us further through our social media!</label
-          >
+          <label class="text-white font-semibold">See us further through our social media!</label>
           <div class="px-5 sm:px-0 flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center mt-3">
             <a href="https://www.instagram.com/creon_itenas/">
-							<button type="submit" class="rounded-full text-white border text-xs lg:text-md px-6 py-3 max-w-screen-md font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
-								Instagram
-							</button>
-						</a>
+            <button type="submit" class="rounded-full text-white border text-xs lg:text-md px-6 py-3 max-w-screen-md font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
+              Instagram
+            </button>
+            </a>
+            <a href="https://youtube.com/@creon-p6z?si=ji1clmula6c9MqTc">
+            <button type="submit" class="rounded-full text-white border text-xs lg:text-md px-6 py-3 max-w-screen-md font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
+              YouTube
+            </button>
+            </a>
           </div>
         </div>
         <div class="text-center text-white">
