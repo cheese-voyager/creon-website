@@ -8,7 +8,7 @@
 	.st3{font-family:'Swiss721BT-Black';}
 	.st4{font-size:32.3272px;}
 </style>
-<g transform="translate(20,0)">
+<g transform="translate(40,0)">
 	<path class="st0" d="M20,0h350c11,0,20,9,20,20v147c0,11-9,20-20,20H20c-11,0-20-9-20-20V20C0,9,9,0,20,0z"/>
 	<circle class="st1" cx="54" cy="54" r="28"/>
 	<text transform="matrix(1 0 0 1 26 87.5)">
