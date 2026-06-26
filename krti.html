@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRTI - AEROTENS | CREON</title>
+  <meta name="description"
+    content="AEROTENS (Aeronautica Team of Engineering Itenas) - KRTI 2026 VTOL Division. A drone research team developing autonomous VTOL systems for emergency service missions from Institut Teknologi Nasional Bandung." />
+  <!-- Tailwind -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Alpine -->
+  <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Custom style -->
+  <link rel="stylesheet" href="css/creon.css" />
+  <!-- Poppins font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="antialiased bg-white">
+
+  <!-- Navbar -->
+  <div x-data="{ open: false }" class="w-full text-gray-700 bg-cream fixed top-0 z-50"
+    style="box-shadow: 0 2px 20px rgba(0,0,0,0.06);">
+    <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
+      <div class="flex flex-row items-center justify-between py-4">
+        <div class="relative">
+          <a href="index.html"
+            class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">CREON</a>
+          <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z"
+              fill="#23BDEE" />
+          </svg>
+        </div>
+        <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <nav :class="{ 'transform md:transform-none': !open, 'h-full': open }"
+        class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
+        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+          href="index.html">Home</a>
+        <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-4 md:ml-4 focus:outline-none focus:shadow-outline"
+          href="krti.html" style="color: #F48C06;">KRTI</a>
+        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+          href="team.html">Our Team</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="krti-hero" style="padding-top: 60px;">
+    <!-- Background Image -->
+    <div class="krti-hero-bg" style="background-image: url('img/krti/progress/krti2026/heroBackground.jpg');"></div>
+    <div class="krti-hero-overlay"></div>
+    <!-- Particles -->
+    <div class="hero-particles">
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+      <div class="hero-particle"></div>
+    </div>
+    <!-- Content -->
+    <div class="krti-hero-content px-8 text-center max-w-4xl mx-auto">
+      <div data-aos="fade-down" data-aos-duration="800">
+        <span class="inline-block px-5 py-1.5 mb-6 text-xs font-bold tracking-widest text-white uppercase rounded-full"
+          style="background: rgba(244,140,6,0.25); border: 1px solid rgba(244,140,6,0.4);">
+          KRTI 2026 &bull; VTOL Division
+        </span>
+      </div>
+      <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150"
+        class="text-5xl md:text-8xl font-black text-white mb-3 tracking-tight">
+        AERO<span class="gradient-text">TENS</span>
+      </h1>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"
+        class="text-lg md:text-2xl text-gray-200 mb-3 font-medium">
+        Aeronautica Team of Engineering Itenas
+      </p>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="450"
+        class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+        A drone research team from Institut Teknologi Nasional (ITENAS) Bandung, developing autonomous VTOL systems for
+        the Indonesian Flying Robot Contest. Prepared for emergency service missions in the smart city ecosystem of IKN.
+      </p>
+      <div data-aos="fade-up" data-aos-delay="600"
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+        <a href="#about" class="cta-btn text-sm">Explore Our Mission</a>
+        <a href="team.html" class="footer-social-btn text-sm" style="border-color: rgba(255,255,255,0.3);">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+            </path>
+          </svg>
+          Meet Our Team
+        </a>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="750" class="scroll-indicator">
+        <svg class="w-6 h-6 mx-auto text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Transition -->
+  <div class="text-white -mt-1 relative z-10">
+    <svg class="xl:h-32 xl:w-full" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+      preserveAspectRatio="none">
+      <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+        fill="currentColor"></path>
+    </svg>
+  </div>
+
+  <!-- About AEROTENS Section -->
+  <section id="about" class="bg-white pt-10 pb-20 px-8">
+    <div class="max-w-screen-xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-16">
+        <span class="tag-pill mb-3">Who We Are</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-darken mt-3">
+          What is <span class="text-yellow-500">AEROTENS?</span>
+        </h2>
+        <p class="text-gray-500 max-w-3xl mx-auto mt-4 leading-relaxed">
+          AEROTENS (Aeronautica Team of Engineering Itenas) is a multidisciplinary robotics team from Institut Teknologi
+          Nasional (ITENAS) Bandung. Representing CREON in the KRTI 2026 VTOL division, our team brings together
+          students from Informatics, Mechanical Engineering, Electrical Engineering, Product Design, and Visual
+          Communication Design to develop an autonomous drone capable of completing emergency service missions.
+        </p>
+      </div>
+
+      <!-- Stats Row -->
+      <div data-aos="fade-up" data-aos-delay="200"
+        class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16">
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <p class="text-gray-500 text-sm mt-1 font-medium">Flight Missions</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10</div>
+          <p class="text-gray-500 text-sm mt-1 font-medium">Min Flight Time</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">&lt;25</div>
+          <p class="text-gray-500 text-sm mt-1 font-medium">Kg Max Weight</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">27+</div>
+          <p class="text-gray-500 text-sm mt-1 font-medium">Team Members</p>
+        </div>
+      </div>
+
+      <!-- AERO-GUARD Title -->
+      <div data-aos="fade-up" class="text-center mb-6">
+        <h3 class="text-2xl md:text-3xl font-bold text-darken">
+          AERO-GUARD
+        </h3>
+        <p class="text-gray-400 text-sm mt-1 italic max-w-2xl mx-auto">
+          Sistem VTOL Cerdas dengan Navigasi Berbasis Visual Penembus Rintangan Urban untuk Layanan Distribusi First Aid
+          Kit Presisi
+        </p>
+      </div>
+
+      <!-- Theme Badge -->
+      <div data-aos="fade-up" data-aos-delay="100" class="text-center mb-16">
+        <span class="inline-block px-5 py-2 rounded-full text-sm font-semibold"
+          style="background: linear-gradient(135deg, rgba(244,140,6,0.1), rgba(35,189,238,0.1)); color: #2F327D; border: 1px solid rgba(244,140,6,0.2);">
+          Smart City &bull; Emergency Service: The Guardian of IKN
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- S-Curve Mission Flow Section -->
+  <section class="s-curve-section bg-cream py-20 px-8">
+    <div class="max-w-screen-xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <span class="tag-pill mb-3">Mission Workflow</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-darken mt-3">
+          What We Do in <span class="text-yellow-500">KRTI</span>
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mt-3">
+          Our VTOL drone completes 5 mission phases, from manual navigation through autonomous delivery and precision
+          landing.
+        </p>
+      </div>
+
+      <!-- Desktop S-Curve Layout -->
+      <div class="s-curve-grid">
+        <!-- Left Box: About the Drone -->
+        <div data-aos="fade-right" data-aos-delay="200">
+          <div class="s-curve-box">
+            <div class="s-curve-box-img">
+              <img src="img/krti/progress/krti2026/sCurveLeft.jpg" alt="AERO-GUARD Drone"
+                style="width:100%;height:100%;object-fit:cover;" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-darken mb-2">About AERO-GUARD</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Our autonomous VTOL drone is powered by Pixhawk flight controller and NVIDIA Jetson Nano for visual
+                navigation. Equipped with dual ArduCam cameras, GPS M10, collision avoidance sensors, and a custom
+                gripper mechanism for precise First Aid Kit delivery.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-600 font-medium">Pixhawk</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-green-50 text-green-600 font-medium">Jetson Nano</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-purple-50 text-purple-600 font-medium">ArUco Nav</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-red-50 text-red-600 font-medium">Gripper</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: S-Curve SVG -->
+        <div class="s-curve-center" x-data="{ activeTooltip: null }" data-aos="fade-up" data-aos-delay="400">
+          <svg viewBox="0 0 200 650" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <!-- S-Curve Path -->
+            <path class="s-curve-path" id="sCurvePath"
+              d="M 100 30 C 180 100, 190 170, 100 210 C 10 250, 0 320, 100 360 C 200 400, 190 470, 100 510 C 10 550, 20 600, 100 630"
+              stroke="url(#curveGradient)" stroke-width="3" fill="none" stroke-linecap="round" />
+
+            <!-- Gradient Definition -->
+            <defs>
+              <linearGradient id="curveGradient" x1="100" y1="30" x2="100" y2="630" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F48C06" />
+                <stop offset="50%" stop-color="#23BDEE" />
+                <stop offset="100%" stop-color="#F48C06" />
+              </linearGradient>
+            </defs>
+
+            <!-- Mission 1 Dot -->
+            <g class="s-curve-dot" @mouseenter="activeTooltip = 1" @mouseleave="activeTooltip = null">
+              <circle class="outer" cx="145" cy="65" r="10" />
+              <circle class="inner" cx="145" cy="65" r="4" />
+              <text x="145" y="95" text-anchor="middle">M1</text>
+            </g>
+
+            <!-- Mission 2 Dot -->
+            <g class="s-curve-dot" @mouseenter="activeTooltip = 2" @mouseleave="activeTooltip = null">
+              <circle class="outer" cx="100" cy="210" r="10" />
+              <circle class="inner" cx="100" cy="210" r="4" />
+              <text x="100" y="240" text-anchor="middle">M2</text>
+            </g>
+
+            <!-- Mission 3 Dot -->
+            <g class="s-curve-dot" @mouseenter="activeTooltip = 3" @mouseleave="activeTooltip = null">
+              <circle class="outer" cx="100" cy="360" r="10" />
+              <circle class="inner" cx="100" cy="360" r="4" />
+              <text x="100" y="390" text-anchor="middle">M3</text>
+            </g>
+
+            <!-- Mission 4 Dot -->
+            <g class="s-curve-dot" @mouseenter="activeTooltip = 4" @mouseleave="activeTooltip = null">
+              <circle class="outer" cx="100" cy="510" r="10" />
+              <circle class="inner" cx="100" cy="510" r="4" />
+              <text x="100" y="540" text-anchor="middle">M4</text>
+            </g>
+
+            <!-- Mission 5 Dot -->
+            <g class="s-curve-dot" @mouseenter="activeTooltip = 5" @mouseleave="activeTooltip = null">
+              <circle class="outer" cx="100" cy="630" r="10" />
+              <circle class="inner" cx="100" cy="630" r="4" />
+              <text x="100" y="618" text-anchor="middle">M5</text>
+            </g>
+          </svg>
+
+          <!-- Tooltips -->
+          <div class="mission-tooltip" :class="{ 'visible': activeTooltip === 1 }" style="top: 40px; left: -60px;">
+            <strong style="color: #F48C06;">Mission 1</strong><br />
+            <span style="color: #555;">Manual Navigation<br />Gate 1 &amp; 2 &rarr; WP1</span>
+          </div>
+          <div class="mission-tooltip" :class="{ 'visible': activeTooltip === 2 }" style="top: 190px; left: -80px;">
+            <strong style="color: #F48C06;">Mission 2</strong><br />
+            <span style="color: #555;">Autonomous Double Gate<br />WP1 &rarr; WP2 + Med Kit Drop</span>
+          </div>
+          <div class="mission-tooltip" :class="{ 'visible': activeTooltip === 3 }" style="top: 340px; left: -80px;">
+            <strong style="color: #F48C06;">Mission 3</strong><br />
+            <span style="color: #555;">Triple Gate Navigation<br />WP2 &rarr; WP4 (2m corridor)</span>
+          </div>
+          <div class="mission-tooltip" :class="{ 'visible': activeTooltip === 4 }" style="top: 490px; left: -80px;">
+            <strong style="color: #F48C06;">Mission 4</strong><br />
+            <span style="color: #555;">Black Line Tracking<br />WP4 &rarr; WP5 via markers</span>
+          </div>
+          <div class="mission-tooltip" :class="{ 'visible': activeTooltip === 5 }" style="top: 600px; left: -60px;">
+            <strong style="color: #F48C06;">Mission 5</strong><br />
+            <span style="color: #555;">Final Gate &amp; Landing<br />Autonomous precision landing</span>
+          </div>
+        </div>
+
+        <!-- Right Box: Team Divisions -->
+        <div data-aos="fade-left" data-aos-delay="200">
+          <div class="s-curve-box">
+            <div class="s-curve-box-img">
+              <img src="img/krti/progress/krti2026/sCurveRight.jpg" alt="AEROTENS Team"
+                style="width:100%;height:100%;object-fit:cover;" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-darken mb-2">Our Divisions</h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                27+ dedicated members across 5 departments collaborate on building, programming, and flying our
+                autonomous drone system.
+              </p>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background: #23BDEE;"></div>
+                  <span class="text-xs text-gray-600 font-medium">Informatika &bull; Software &amp;
+                    Administration</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background: #F48C06;"></div>
+                  <span class="text-xs text-gray-600 font-medium">Teknik Mesin &bull; Mechanics &amp; Field</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background: #4ADE80;"></div>
+                  <span class="text-xs text-gray-600 font-medium">Teknik Elektro &bull; Electronics</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background: #A78BFA;"></div>
+                  <span class="text-xs text-gray-600 font-medium">Desain Produk &bull; Customization</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background: #F472B6;"></div>
+                  <span class="text-xs text-gray-600 font-medium">DKV &bull; Visual Design &amp; Branding</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile S-Curve Fallback Timeline -->
+      <div class="s-curve-mobile mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <!-- Left Box Mobile -->
+          <div class="s-curve-box" data-aos="fade-up">
+            <div class="s-curve-box-img" style="height: 180px;">
+              <img src="img/krti/progress/krti2026/_MG_0637.jpg" alt="AERO-GUARD Drone"
+                style="width:100%;height:100%;object-fit:cover;" />
+            </div>
+            <div class="p-5">
+              <h3 class="text-base font-bold text-darken mb-1">About AERO-GUARD</h3>
+              <p class="text-gray-500 text-xs leading-relaxed">Autonomous VTOL drone powered by Pixhawk and Jetson Nano
+                for visual navigation, equipped with dual cameras and a custom gripper.</p>
+            </div>
+          </div>
+          <!-- Right Box Mobile -->
+          <div class="s-curve-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="s-curve-box-img" style="height: 180px;">
+              <img src="img/krti/progress/krti2026/_MG_0551.jpg" alt="AEROTENS Team"
+                style="width:100%;height:100%;object-fit:cover;" />
+            </div>
+            <div class="p-5">
+              <h3 class="text-base font-bold text-darken mb-1">Our Divisions</h3>
+              <p class="text-gray-500 text-xs leading-relaxed">27+ members across 5 departments: Software, Mechanics,
+                Electronics, Product Design, and Visual Design.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile Timeline -->
+        <h3 class="text-lg font-bold text-darken mb-6">Mission Phases</h3>
+        <div class="s-curve-mobile-timeline">
+          <div class="s-curve-mobile-item" data-aos="fade-up">
+            <h4 class="font-bold text-darken text-sm">Mission 1: Manual Navigation</h4>
+            <p class="text-gray-500 text-xs mt-1">Navigate manually through Gate 1 and Gate 2 to reach WP1. Transition
+              from manual to autonomous mode at this checkpoint.</p>
+          </div>
+          <div class="s-curve-mobile-item" data-aos="fade-up" data-aos-delay="100">
+            <h4 class="font-bold text-darken text-sm">Mission 2: Autonomous Double Gate + Med Kit Drop</h4>
+            <p class="text-gray-500 text-xs mt-1">Autonomously traverse the 1-meter Double Gate corridor from WP1 to
+              WP2. Identify the red target zone and release the First Aid Kit.</p>
+          </div>
+          <div class="s-curve-mobile-item" data-aos="fade-up" data-aos-delay="200">
+            <h4 class="font-bold text-darken text-sm">Mission 3: Triple Gate Navigation</h4>
+            <p class="text-gray-500 text-xs mt-1">Navigate through the 2-meter Triple Gate corridor using collision
+              avoidance sensors and ArUco marker detection for position correction at WP4.</p>
+          </div>
+          <div class="s-curve-mobile-item" data-aos="fade-up" data-aos-delay="300">
+            <h4 class="font-bold text-darken text-sm">Mission 4: Black Line Tracking</h4>
+            <p class="text-gray-500 text-xs mt-1">Track the dashed black line on the field surface using the
+              downward-facing camera, navigating from WP4 to WP5.</p>
+          </div>
+          <div class="s-curve-mobile-item" data-aos="fade-up" data-aos-delay="400">
+            <h4 class="font-bold text-darken text-sm">Mission 5: Final Gate &amp; Autonomous Landing</h4>
+            <p class="text-gray-500 text-xs mt-1">Pass through the final Single Gate and execute a precision autonomous
+              landing on the designated landing pad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drone Showcase Section -->
+  <section class="bg-white py-20 px-8">
+    <div class="max-w-screen-xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <span class="tag-pill mb-3">Our Drone</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-darken mt-3">
+          Meet <span class="text-yellow-500">AERO-GUARD</span>
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mt-3">
+          An autonomous VTOL drone engineered for urban emergency response, combining cutting-edge hardware with
+          intelligent visual navigation.
+        </p>
+      </div>
+
+      <!-- Gallery Grid: 5 images -->
+      <div class="drone-gallery mb-16" data-aos="fade-up" data-aos-delay="200">
+        <!-- Main large image -->
+        <div class="gallery-item" style="min-height: 350px;">
+          <img src="img/krti/progress/krti2026/galleryMain.jpg" alt="AERO-GUARD Full Assembly"
+            style="width:100%;height:100%;object-fit:cover;" />
+          <div class="gallery-item-overlay">
+            <h4 class="font-bold text-sm">Full Assembly View</h4>
+            <p class="text-xs text-gray-300 mt-0.5">Complete AERO-GUARD drone assembly</p>
+          </div>
+        </div>
+        <!-- Smaller images -->
+        <div class="gallery-item" style="min-height: 170px;">
+          <img src="img/krti/progress/krti2026/gallery2.jpg" alt="Electronics & Wiring Closeup"
+            style="width:100%;height:100%;object-fit:cover;" />
+          <div class="gallery-item-overlay">
+            <h4 class="font-bold text-sm">Electronics & Wiring</h4>
+          </div>
+        </div>
+        <div class="gallery-item" style="min-height: 170px;">
+          <img src="img/krti/progress/krti2026/gallery3.jpg" alt="Team Inspecting Drone"
+            style="width:100%;height:100%;object-fit:cover;" />
+          <div class="gallery-item-overlay">
+            <h4 class="font-bold text-sm">Assembly</h4>
+          </div>
+        </div>
+        <div class="gallery-item" style="min-height: 170px;">
+          <img src="img/krti/progress/krti2026/gallery4.jpg" alt="Drone Handling"
+            style="width:100%;height:100%;object-fit:cover;" />
+          <div class="gallery-item-overlay">
+            <h4 class="font-bold text-sm">Drone Handling</h4>
+          </div>
+        </div>
+        <div class="gallery-item" style="min-height: 170px;">
+          <img src="img/krti/progress/krti2026/gallery5.jpg" alt="Flight Testing"
+            style="width:100%;height:100%;object-fit:cover;" />
+          <div class="gallery-item-overlay">
+            <h4 class="font-bold text-sm">Flight Testing</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="feature-card-icon" style="background: rgba(35,189,238,0.1);">
+            <svg class="w-6 h-6" style="color: #23BDEE;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+              </path>
+            </svg>
+          </div>
+          <h4 class="font-bold text-darken text-sm mb-1">Autonomous Navigation</h4>
+          <p class="text-gray-400 text-xs leading-relaxed">Jetson Nano processes visual data in real-time for GPS-denied
+            autonomous flight using ArUco markers and computer vision.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card-icon" style="background: rgba(244,140,6,0.1);">
+            <svg class="w-6 h-6" style="color: #F48C06;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+              </path>
+            </svg>
+          </div>
+          <h4 class="font-bold text-darken text-sm mb-1">Visual Detection</h4>
+          <p class="text-gray-400 text-xs leading-relaxed">Dual ArduCam camera system (horizontal and vertical) for
+            obstacle detection, line tracking, and target identification.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card-icon" style="background: rgba(243,98,124,0.1);">
+            <svg class="w-6 h-6" style="color: #F3627C;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
+          </div>
+          <h4 class="font-bold text-darken text-sm mb-1">Med Kit Delivery</h4>
+          <p class="text-gray-400 text-xs leading-relaxed">Custom-designed gripper mechanism capable of carrying and
+            autonomously releasing the First Aid Kit at the designated drop zone.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card-icon" style="background: rgba(74,222,128,0.1);">
+            <svg class="w-6 h-6" style="color: #4ADE80;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+              </path>
+            </svg>
+          </div>
+          <h4 class="font-bold text-darken text-sm mb-1">Collision Avoidance</h4>
+          <p class="text-gray-400 text-xs leading-relaxed">Ultrasonic sensors and emergency landing system ensure safe
+            flight operations with automatic landing on signal loss.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Working On (Progress) -->
+  <section class="bg-cream py-20 px-8">
+    <div class="max-w-screen-xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <span class="tag-pill mb-3">Our Progress</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-darken mt-3">
+          What We're <span class="text-yellow-500">Working On</span>
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mt-3">
+          A snapshot of the key activities and milestones our team has been focusing on as we prepare for KRTI 2026.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Progress Card 1: Autonomous -->
+        <div class="progress-card" data-aos="fade-up">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="progress-icon" style="background: rgba(35,189,238,0.1);">
+                <svg class="w-6 h-6" style="color: #23BDEE;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-darken mb-1">Autonomous System Development</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Configuring the Jetson Nano microcontroller,
+                  calibrating ArduCam cameras, and establishing the wiring infrastructure between the microcomputer and
+                  Pixhawk flight controller for autonomous flight operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Card 2: Mechanical -->
+        <div class="progress-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="progress-icon" style="background: rgba(244,140,6,0.1);">
+                <svg class="w-6 h-6" style="color: #F48C06;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                  </path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-darken mb-1">Mechanical Customization</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Designing and fabricating the custom gripper mechanism
+                  for secure med kit handling, engineering the propeller guard for safety compliance, and customizing
+                  the landing gear for stable autonomous touchdown.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Card 3: Field -->
+        <div class="progress-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="progress-icon" style="background: rgba(74,222,128,0.1);">
+                <svg class="w-6 h-6" style="color: #4ADE80;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-darken mb-1">Field Construction</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Building a regulation-compliant practice course
+                  including 2 single gates, 1 double gate, and 3 triple gates that match the official KRTI 2026
+                  competition field specifications.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Card 4: Creative -->
+        <div class="progress-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="progress-icon" style="background: rgba(244,114,182,0.1);">
+                <svg class="w-6 h-6" style="color: #F472B6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0h4a1 1 0 011 1v3a1 1 0 01-1 1h-1m-4-5H8m0 0H4a1 1 0 00-1 1v3a1 1 0 001 1h1m14 0v9a2 2 0 01-2 2H7a2 2 0 01-2-2v-9m14 0H5">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-darken mb-1">Creative & Branding</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Fulfilling mandatory KRTI social media engagement
+                  regulations through research progress updates, team branding content, and building public awareness of
+                  the AEROTENS team identity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Gallery -->
+      <div data-aos="fade-up" class="mt-16">
+        <h3 class="text-xl font-bold text-darken text-center mb-8">Progress Documentation</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="gallery-item rounded-xl" style="min-height: 160px;">
+            <img src="img/krti/progress/krti2026/progress1.jpg" alt="Hands-on Wiring"
+              style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div class="gallery-item rounded-xl" style="min-height: 160px;">
+            <img src="img/krti/progress/krti2026/progress2.jpg" alt="Field Testing"
+              style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div class="gallery-item rounded-xl" style="min-height: 160px;">
+            <img src="img/krti/progress/krti2026/progress3.jpg" alt="Ground Preparation"
+              style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div class="gallery-item rounded-xl" style="min-height: 160px;">
+            <img src="img/krti/progress/krti2026/progress4.jpg" alt="Team Activity"
+              style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet The Team CTA -->
+  <section class="cta-section py-20 px-8">
+    <div class="max-w-screen-md mx-auto text-center relative z-10">
+      <div data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Get to Know Our Team
+        </h2>
+        <p class="text-gray-300 mb-8 max-w-lg mx-auto">
+          27+ dedicated members from 5 different departments working together to build, program, and fly AERO-GUARD.
+          Meet the people behind the innovation.
+        </p>
+        <a href="team.html" class="cta-btn inline-flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+            </path>
+          </svg>
+          Meet The AEROTENS Team
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="krti-footer">
+    <div class="max-w-lg mx-auto">
+      <div class="flex py-10 justify-center text-white items-center px-10 sm:px-20">
+        <div class="relative">
+          <h1 class="font-bold text-xl pr-5 relative z-50">AEROTENS</h1>
+          <svg class="w-11 h-11 absolute -top-2 -left-3 z-40" viewBox="0 0 79 79" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M35.9645 2.94975C37.9171 0.997129 41.0829 0.997127 43.0355 2.94975L76.0502 35.9645C78.0029 37.9171 78.0029 41.0829 76.0503 43.0355L43.0355 76.0502C41.0829 78.0029 37.9171 78.0029 35.9645 76.0503L2.94975 43.0355C0.997129 41.0829 0.997127 37.9171 2.94975 35.9645L35.9645 2.94975Z"
+              stroke="#23BDEE" stroke-width="2" />
+          </svg>
+        </div>
+        <span class="border-l border-gray-500 text-sm pl-5 py-2 font-medium text-gray-300">Aeronautica Team of
+          Engineering Itenas</span>
+      </div>
+      <div class="text-center pb-12 pt-2">
+        <label class="text-gray-300 font-medium text-sm">Connect with us!</label>
+        <div class="px-5 sm:px-0 flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center mt-4">
+          <a href="https://www.instagram.com/aerotens.itenas/" class="footer-social-btn" target="_blank" rel="noopener">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+            @aerotens.itenas
+          </a>
+          <a href="https://www.tiktok.com/@untitled" class="footer-social-btn" target="_blank" rel="noopener">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.17a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.6z" />
+            </svg>
+            @untitled
+          </a>
+          <a href="krti.html" class="footer-social-btn">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+              </path>
+            </svg>
+            Website
+          </a>
+        </div>
+      </div>
+      <div class="text-center text-gray-400 pb-6">
+        <p class="text-xs">&copy; 2026 AEROTENS &bull; CREON ITENAS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <!-- AOS init + S-Curve animation -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // S-Curve path animation on scroll
+    const sCurvePath = document.querySelector('.s-curve-path');
+    if (sCurvePath) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            sCurvePath.classList.add('animated');
+          }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(sCurvePath);
+    }
+
+    // Back to top button visibility
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

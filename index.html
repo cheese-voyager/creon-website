@@ -39,6 +39,8 @@
         </div>
         <nav :class="{ 'transform md:transform-none': !open, 'h-full': open }" class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
           <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">Divisi</a>
+          <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="krti.html">KRTI</a>
+          <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">KKI</a>
           <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#">About Us</a>
         </nav>
       </div>
@@ -157,9 +159,9 @@
         It's a forum for Itenas students to innovate and excel in the field of robotics. Actively involved in research and development of technology through its divisions: KRAI, KRTI, and KRBAI. With a competent team and a high spirit of innovation, CREON is committed to becoming a leading center for academic robotics and contributing to the advancement of national technology.
       </p>
     </div>
-    <div data-aos="fade-up" class="flex flex-col mt-28 md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
-      <div class="relative md:w-5/12">
-        <img class="rounded-2xl w-full" src="img/KRAI.jpg" alt="" />
+    <div data-aos="fade-up" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 mt-28 max-w-screen-lg mx-auto px-4">
+      <div class="relative">
+        <img class="rounded-2xl w-full h-64 object-cover" src="img/KRAI.jpg" alt="KRAI Division" />
         <div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
           <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <h1 class="uppercase text-white font-bold text-center text-sm lg:text-3xl mb-3">KRAI</h1>
@@ -167,14 +169,27 @@
           </div>
         </div>
       </div>
-      <div class="relative md:w-5/12">
-        <img class="rounded-2xl w-full" src="img/Rectangle 21.png" alt="" />
-        <div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
-          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <h1 class="uppercase text-white font-bold text-center text-sm lg:text-3xl mb-3">KRTI</h1>
-            <button class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Check This Out!</button>
+      <div class="relative">
+        <a href="krti.html">
+          <img class="rounded-2xl w-full h-64 object-cover" src="img/Rectangle 21.png" alt="KRTI Division" />
+          <div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <h1 class="uppercase text-white font-bold text-center text-sm lg:text-3xl mb-3">KRTI</h1>
+              <span class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium inline-block transform transition hover:scale-110 duration-300 ease-in-out">Check This Out!</span>
+            </div>
           </div>
-        </div>
+        </a>
+      </div>
+      <div class="relative">
+        <a href="#">
+          <img class="rounded-2xl w-full h-64 object-cover" src="img/Rectangle 19.png" alt="KKI Division" />
+          <div class="absolute bg-black bg-opacity-40 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <h1 class="uppercase text-white font-bold text-center text-sm lg:text-3xl mb-3">KKI</h1>
+              <span class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium inline-block opacity-70">Coming Soon</span>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
 
